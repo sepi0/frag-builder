@@ -7,7 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.controller", "com.example.service", "com.example.model", "com.example.dao"})
+@ComponentScan(basePackages = {
+		"com.example.controller",
+		"com.example.service",
+		"com.example.model",
+		"com.example.dao",
+})
 @EnableJpaRepositories(basePackages = "com.example.dao")
 @EntityScan(basePackages = "com.example.model")
 public class DemoApplication {
@@ -15,5 +20,4 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-
 }

@@ -30,6 +30,15 @@ public class ComponentDAOImpl implements ComponentDAO {
     }
 
     @Override
+    public List<Component> findByTypeAndModel(String type, String model) {
+        String stringQuery = String.format("SELECT c FROM Component c WHERE c.type = :typeName AND c.model LIKE '%s'", model);
+        Query query = entityManager.createQuery(stringQuery);
+        query.setParameter("typeName", type);
+        query.setParameter("model", model);
+        return query.getResultList();
+    }
+
+    @Override
     public Component get(int id) {
         Session session = entityManager.unwrap(Session.class);
         Component component = session.get(Component.class, id);

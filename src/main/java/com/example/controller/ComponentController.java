@@ -12,17 +12,22 @@ public class ComponentController {
     private ComponentService componentService;
 
     @GetMapping(path = "/components/all")
-    public @ResponseBody Iterable<Component> getAllComponents() {
+    public @ResponseBody Iterable<Component> getAll() {
         return componentService.findAll();
     }
 
     @GetMapping(path = "/components/{id}")
-    public @ResponseBody Component getCpu(@PathVariable Integer id) {
+    public @ResponseBody Component getById(@PathVariable Integer id) {
         return componentService.get(id);
     }
 
-    @GetMapping(path = "/components/cpu/all")
-    public @ResponseBody Iterable<Component> getAllCpus() {
-        return componentService.findByType("cpu");
+    @GetMapping(path = "/components/{type}/{model}")
+    public @ResponseBody Iterable<Component> getByTypeAndModel(@PathVariable String type, @PathVariable String model) {
+        return componentService.findByTypeAndModel(type, model);
+    }
+
+    @GetMapping(path = "/components/{type}/all")
+    public @ResponseBody Iterable<Component> getAllByType(@PathVariable String type) {
+        return componentService.findByType(type);
     }
 }

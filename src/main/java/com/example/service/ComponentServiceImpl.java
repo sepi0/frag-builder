@@ -28,6 +28,12 @@ public class ComponentServiceImpl implements ComponentService {
 
     @Transactional
     @Override
+    public List<Component> findByTypeAndModel(String type, String model) {
+        return componentDAO.findByTypeAndModel(type, model);
+    }
+
+    @Transactional
+    @Override
     public Component get(int id) {
         return componentDAO.get(id);
     }
