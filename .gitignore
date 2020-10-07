@@ -39,24 +39,23 @@ build/
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/frontend/node_modules
-/frontend/.pnp
-/frontend/.pnp.js
+react-frontend/testproject/node_modules
+react-frontend/testproject.pnpreact-frontend/testproject.pnp.js
 
 # testing
-/frontend/coverage
+react-frontend/testproject/coverage
 
 # production
-/frontend/build
+react-frontend/testproject/build
 
 # misc
-/frontend/.DS_Store
-/frontend/.env.local
-/frontend/.env.development.local
-/frontend/.env.test.local
-/frontend/.env.production.local
+react-frontend/testproject/.DS_Store
+react-frontend/testproject.env.local
+react-frontend/testproject.env.development.local
+react-frontend/testproject.env.test.local
+react-frontend/testproject.env.production.local
 
-/frontend/npm-debug.log*
-/frontend/yarn-debug.log*
-/frontend/yarn-error.log*
+react-frontend/testproject/npm-debug.log*
+react-frontend/testproject/yarn-debug.log*
+react-frontend/testproject/yarn-error.log*
 
