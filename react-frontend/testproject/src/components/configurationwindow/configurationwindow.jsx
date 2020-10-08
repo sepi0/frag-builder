@@ -4,6 +4,7 @@ import './configurationwindow.styles.css'
 import Button from 'react-bootstrap/Button'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+
 class ConfigurationWindow extends React.Component {
 
   componentTypes = ["cpu", "gpu", "mobo", "ram", "case", "psu", "hdd", "ssd", "cooling"]
@@ -83,7 +84,7 @@ class ConfigurationWindow extends React.Component {
     const elements = []
     this.state.fetchedComponents.map(item => elements.push(
       <div className="product">
-        <p className="item-text" value={item.id} onChange={() => this.addToCart(item.model)}>{item.model}</p>
+        <p className="item-text" value={item.id} onChange={() => this.addToCart(item.model)}>{item.model.toUpperCase()}</p>
         <Button 
           variant="primary" 
           onClick={() => this.addToCart(item)}>
@@ -98,7 +99,7 @@ class ConfigurationWindow extends React.Component {
     const cart = []
     this.state.selectedComponents.map(item => cart.push(
       <div className="cart" key={item.id}>
-        <p className="item-text">{item.model}</p>
+        <p className="item-text">{item.model.toUpperCase()}</p>
         <Button variant="danger" onClick={() => this.removeFromCart(item)}>X</Button>
       </div>
     ))

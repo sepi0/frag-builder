@@ -31,10 +31,11 @@ public class ComponentDAOImpl implements ComponentDAO {
 
     @Override
     public List<Component> findByTypeAndModel(String type, String model) {
-        String modelFormatted = "%" + model + "%";
+        String modelFormatted = "%" + model + "%";;
         String stringQuery = "SELECT c FROM Component c WHERE c.type = :typeName AND c.model LIKE :model";
         Query query = entityManager.createQuery(stringQuery);
         query.setParameter("typeName", type).setParameter("model", modelFormatted);
+        System.out.println(stringQuery);
         return query.getResultList();
     }
 
