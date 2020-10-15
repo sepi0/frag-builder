@@ -14,11 +14,12 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public Order save(Order order) {
-        entityManager.createNativeQuery("INSERT INTO orders (order_id, components, email, phone) VALUES(?, ?, ?, ?)")
+        entityManager.createNativeQuery("INSERT INTO orders (order_id, components,  email, phone, name) VALUES(?, ?, ?, ?, ?)")
                 .setParameter(1, order.getOrderId())
                 .setParameter(2, order.getComponents())
                 .setParameter(3, order.getEmail())
                 .setParameter(4, order.getPhone())
+                .setParameter(5, order.getName())
                 .executeUpdate();
         return order;
     }

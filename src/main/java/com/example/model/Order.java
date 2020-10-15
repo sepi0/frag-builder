@@ -19,6 +19,9 @@ public class Order {
     private String components;
 
     @Column
+    private String name;
+
+    @Column
     private String email;
 
     @Column
