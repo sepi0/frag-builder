@@ -12,7 +12,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://sepi0.github.io/frag-builder-frontend/")
     @PostMapping(path = "/send")
     public Order newOrder(@RequestBody Order order) {
         orderService.save(order);
